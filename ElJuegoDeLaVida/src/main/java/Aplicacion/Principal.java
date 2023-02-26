@@ -1,11 +1,11 @@
 package Aplicacion;
 
-import org.example.Tablero;
-
+import dominio.Tablero;
 import java.util.concurrent.TimeUnit;
+import java.lang.InterruptedException;
+public class Principal{
+    public static void main(String[] args){
 
-public class Principal {
-    public static void main(String[] args) {
         try {
             Tablero tablero = new Tablero();
             System.out.println("SIMULACIÓN CON TABLERO LEÍDO ");
@@ -20,7 +20,7 @@ public class Principal {
             }
 
             System.out.println("SIMULACIÓN CON TABLERO GENERADO MEDIANTE MONTECARLO");
-            tablero.generarEstadoActualPorMontecarlo(0.5);
+                tablero.generarEstadoActualPorMontecarlo(0.5);
 
             System.out.println(tablero);
             for(int i = 0; i <= 15; i++)
@@ -35,6 +35,7 @@ public class Principal {
         {
             System.out.println(e);
         }
+
 
     }
 }

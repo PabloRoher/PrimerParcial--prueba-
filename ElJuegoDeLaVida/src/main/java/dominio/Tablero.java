@@ -1,4 +1,4 @@
-package org.example;
+package dominio;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -15,7 +15,7 @@ public class Tablero {
     int columnas = 0;
 
     public void leerEstadoActual() {
-        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/dominio/matriz.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/org/example/matriz.txt"))) {
             String linea;
 
             while ((linea = br.readLine()) != null) {

@@ -1,7 +1,6 @@
 package mates;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Matematicas{
     /**
@@ -10,19 +9,21 @@ public class Matematicas{
      * generado.
      */
     public static double generarNumeroPi(long pasos){
-        Scanner teclado1 = new Scanner(System.in);
-        int puntosTotales = teclado1.nextInt();
-        Random random = new Random();
-        int aciertos = 0;
-        int areaCuadrado = 4;
-        for (int i = 1; i < puntosTotales ; i++) {
-            int x = random.nextInt(-1,1);
-            int y = random.nextInt(-1,1);
-            if (x <= 1 && y <= 1){
-                aciertos += 1;
+        Random r = new Random();
+
+        double x, y, cuadrado, aciertos = 0;
+        for (int i = 0; i < pasos; i++){
+            x = r.nextDouble();
+            y = r.nextDouble();
+            cuadrado = x*x + y*y;
+            if (cuadrado <= 1){
+                aciertos++;
             }
+
         }
-        return areaCuadrado * (aciertos/puntosTotales) ;
+
+        return 4 * (aciertos/pasos) ;
+
     }
 }
 
